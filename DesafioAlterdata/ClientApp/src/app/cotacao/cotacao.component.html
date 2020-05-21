@@ -1,0 +1,36 @@
+<h1 id="tableLabel">Cotação</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!cotacoes.cotacoes"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Valor Compra</th>
+      <th>Valor Venda</th>
+      <th>Variação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="cotacoes.cotacoes.dolar">
+      <td>{{ cotacoes.cotacoes.dolar.nome }}</td>
+      <td>{{ cotacoes.cotacoes.dolar.valorCompra }}</td>
+      <td>{{ cotacoes.cotacoes.dolar.valorVenda }}</td>
+      <td>{{ cotacoes.cotacoes.dolar.variacaoPercentual }}</td>
+    </tr>
+    <tr *ngIf="cotacoes.cotacoes.euro">
+        <td>{{ cotacoes.cotacoes.euro.nome }}</td>
+        <td>{{ cotacoes.cotacoes.euro.valorCompra }}</td>
+        <td>{{ cotacoes.cotacoes.euro.valorVenda }}</td>
+        <td>{{ cotacoes.cotacoes.euro.variacaoPercentual }}</td>
+      </tr>
+      <tr *ngIf="cotacoes.cotacoes.bitcoin">
+        <td>{{ cotacoes.cotacoes.bitcoin.nome }}</td>
+        <td>{{ cotacoes.cotacoes.bitcoin.valorCompra }}</td>
+        <td>{{ cotacoes.cotacoes.bitcoin.valorVenda }}</td>
+        <td>{{ cotacoes.cotacoes.bitcoin.variacaoPercentual }}</td>
+      </tr>
+  </tbody>
+</table>
